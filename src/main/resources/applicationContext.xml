@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.3.xsd
+         http://www.springframework.org/schema/mvc
+         http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+    <context:component-scan base-package="com.*"/>
+    <context:component-scan base-package="com.controller"/>
+    <!--<context:component-scan base-package="com.controller"/>-->
+    <!--&lt;!&ndash;<mvc:view-controller path="controller"/>&ndash;&gt;-->
+    <!--<mvc:redirect-view-controller path="controller" redirect-url="/"/>-->
+    <context:annotation-config/>
+    <mvc:annotation-driven/>
+    <!--<mvc:default-servlet-handler/>-->
+    <mvc:default-servlet-handler default-servlet-name="/*"/>
+    <!--<context:annotation-config>com</context:annotation-config>-->
+    <!--<context:annotation-config>com.serviceImpl</context:annotation-config>-->
+    <!--<context:annotation-config>com.service</context:annotation-config>-->
+    <!--<mvc:view-controller path="controller"/>-->
+    <!--<mvc:resources mapping="com.*" location="com"/>-->
+    <mvc:resources location="WEB-INF/images/" mapping="/images/**"/>
+    <mvc:resources location="WEB-INF/css/" mapping="/css/**"/>
+    <mvc:resources location="WEB-INF/style/" mapping="/styles/**"/>
+    <mvc:resources location="WEB-INF/js/" mapping="/js/**"/>
+    <mvc:resources mapping="/views/**" location="WEB-INF/views"/>
+    <mvc:resources mapping="/jsp/**" location="WEB-INF"/>
+</beans>
